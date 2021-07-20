@@ -22,7 +22,7 @@ class NumoNarray < Formula
       system "make"
       system "mkdir -p #{prefix}/lib"
       system "mkdir -p #{prefix}/include"
-      system "cp -v *.so #{prefix}/lib/"
+      system "cp -v narray.so #{prefix}/lib/libnarray.so"
       system "cp -v -r numo #{prefix}/include"
     end
   
