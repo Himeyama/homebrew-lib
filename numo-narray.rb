@@ -20,7 +20,9 @@ class NumoNarray < Formula
       Dir.chdir "ext/numo/narray"
       system "ruby", "extconf.rb"
       system "make"
-      system "cp -v *.so #{prefix}/lib"
+      system "mkdir -p #{prefix}/lib"
+      system "mkdir -p #{prefix}/include"
+      system "cp -v *.so #{prefix}/lib/"
       system "cp -v -r numo #{prefix}/include"
     end
   
