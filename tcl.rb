@@ -2,6 +2,7 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Tcl < Formula
+<<<<<<< HEAD
     desc ""
     homepage ""
     url "https://prdownloads.sourceforge.net/tcl/tcl8.5.19-src.tar.gz"
@@ -39,3 +40,24 @@ class Tcl < Formula
     end
   end
   
+=======
+  desc ""
+  homepage ""
+  url "https://prdownloads.sourceforge.net/tcl/tcl8.5.19-src.tar.gz"
+  sha256 "d3f04456da873d17f02efc30734b0300fb6c3b85028d445fe284b83253a6db18"
+  license "TCL"
+
+  def install
+    require "fileutils"
+    FileUtils.cd "unix", :verbose => true
+    puts FileUtils.pwd
+    system "./configure", "--prefix=#{prefix}", "--with-encoding=UTF-8"
+    system "make", "-j"
+    system "make", "install"
+  end
+
+  test do
+    system "false"
+  end
+end
+>>>>>>> .

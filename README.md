@@ -7,7 +7,7 @@ brew tap himeyama/lib
 
 ## brew create
 ```bash
-brew create --tap <src>.tar.gz
+brew create --tap himeyama/lib <src>.tar.gz
 ```
 
 ## install (Ex.)

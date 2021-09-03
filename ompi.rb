@@ -1,11 +1,11 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-class Octave < Formula
-  desc "GNU Octave Mirror (https://www.octave.org/hg/octave).  Report bugs at https://bugs.octave.org"
-  homepage ""
-  url "https://github.com/gnu-octave/octave/archive/refs/tags/release-6-3-0.tar.gz"
-  sha256 "f0fbb8f1e86140fd69df2b1a4fc4a57febb05b2ca24a38a70f3fb702d4353b0b"
+class Ompi < Formula
+  desc "Open MPI main development repository"
+  homepage "https://www.open-mpi.org"
+  url "https://github.com/open-mpi/ompi/archive/refs/tags/v4.1.1.tar.gz"
+  sha256 "fbddebd47b30c17dd009559157cf7edf5ee8debcf6ba576a84c979618855889f"
   license "NOASSERTION"
 
   # depends_on "cmake" => :build
@@ -18,16 +18,14 @@ class Octave < Formula
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
 
     require "fileutils"
-
-    system "./bootstrap"
-
-    FileUtils.mkdir_p ".build", :verbose => true
-    FileUtils.cd ".build", :verbose => true
+    system "./autogen.pl"
+    FileUtils.mkdir_p "build", :verbose => true
+    FileUtils.cd "build", :verbose => true
     puts FileUtils.pwd
 
-    system "../configure", "--prefix=#{prefix}"#, "CC=gcc", "CXX=g++", "FC=gfortran"
+    system "../configure", "--prefix=#{prefix}", "--disable-mpi-fortran" #, "CC=gcc", "CXX=g++", "FC=gfortran"
 
-    system "make"
+    system "make", "-j"
     system "make", "install"
   end
 
@@ -36,7 +34,7 @@ class Octave < Formula
     #
     # This test will fail and we won't accept that! For Homebrew/homebrew-core
     # this will need to be a test that verifies the functionality of the
-    # software. Run the test with `brew test octave`. Options passed
+    # software. Run the test with `brew test ompi`. Options passed
     # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
     #
     # The installed folder is not in the path, so use the entire path to any
