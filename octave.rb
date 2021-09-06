@@ -15,7 +15,6 @@ class Octave < Formula
   depends_on "openblas"
   depends_on "pcre"
   depends_on "readline"
-  depends_on "arpack"
   depends_on "fltk"
   depends_on "fontconfig"
   depends_on "freetype"
