@@ -26,6 +26,9 @@ class Octave < Formula
   depends_on "qrupdate"
   depends_on "suite-sparse"
   
+  depends_on "findutils"
+  depends_on "librsvg"
+
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
