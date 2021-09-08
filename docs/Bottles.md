@@ -2,6 +2,7 @@
 layout: page
 ---
 
+
 # Bottles (バイナリパッケージ)
 
 Bottles は、`brew install --build-bottle <formula>` で Formula をインストールし、`brew bottle <formula>` でボトリングすることで生成される。これは、Formula ファイルに挿入されるべき Bottle DSL を出力する。
