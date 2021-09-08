@@ -1,5 +1,6 @@
 title: Homebrew ドキュメント (日本語版)
 
+
 remote_theme: Homebrew/brew.sh
 
 plugins:
@@ -8,3 +9,10 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      search_name: Documentation
+      search_site: docs
