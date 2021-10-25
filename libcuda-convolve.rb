@@ -4,9 +4,9 @@
 class LibcudaConvolve < Formula
   desc "convolve"
   homepage "https://blog.hikari-dev.com/"
-  url "https://github.com/Himeyama/libcuda-convolve/archive/refs/tags/copy.tar.gz"
+  url "https://github.com/Himeyama/libcuda-convolve/archive/refs/tags/test2.tar.gz"
   version "0.0.0"
-  sha256 "854535216f34b58aedf96c6a5485fda7cc70b0fc5863b0fe9b0eb3333c9a55c3"
+  sha256 "e4a9a0f451bdf75538aa66dfba0d89d2bd7fba87485ea32d21f7d9e94e5e19ef"
   license "MIT"
 
   # depends_on "cmake" => :build
