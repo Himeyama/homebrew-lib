@@ -2,12 +2,12 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class LibcudaConvolve < Formula
-  desc ""
-  homepage ""
-  url "https://github.com/Himeyama/libcuda-convolve/archive/refs/tags/first.tar.gz"
+  desc "convolve"
+  homepage "https://blog.hikari-dev.com/"
+  url "https://github.com/Himeyama/libcuda-convolve/archive/refs/tags/copy.tar.gz"
   version "0.0.0"
-  sha256 ""
-  license ""
+  sha256 "854535216f34b58aedf96c6a5485fda7cc70b0fc5863b0fe9b0eb3333c9a55c3"
+  license "MIT"
 
   # depends_on "cmake" => :build
 
@@ -17,9 +17,13 @@ class LibcudaConvolve < Formula
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     require "fileutils"
 
-    system "make NVCC=/usr/local/cuda-11.5/bin/nvcc"
-    FileUtils.mkdir_p "#{prefix}/lib/"
-    system "make install libdir=#{prefix}/lib/"
+    nvcc_paths = Dir.glob("/usr/**/nvcc")
+    raise "Command 'nvcc' not found" if nvcc_paths.empty?
+
+    system "make NVCC=#{nvcc_paths[0]}"
+    FileUtils.mkdir_p "#{prefix}/lib"
+    FileUtils.mkdir_p "#{prefix}/include"
+    system "make install libdir=#{prefix}/lib/ incdir=#{prefix}/include"
 
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
