@@ -20,7 +20,12 @@ brew create --tap himeyama/lib <src>.tar.gz
 export EDITOR=code
 ```
 
-### libcuda-convolve
+> libcuda-convolve
 ```bash
 brew install himeyama/homebrew-lib/libcuda-convolve
+```
+
+> libcuda-gaussian1d
+```bash
+brew install himeyama/homebrew-lib/libcuda-gaussian1d
 ```
