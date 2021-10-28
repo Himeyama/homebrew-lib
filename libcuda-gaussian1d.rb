@@ -4,8 +4,8 @@
 class LibcudaGaussian1d < Formula
   homepage "https://blog.hikari-dev.com/"
   desc "A Shared Library of One-Dimensional Gaussian Filters Using GPU"
-  url "https://github.com/Himeyama/libcuda-gaussian1d/archive/refs/tags/0.0.3.tar.gz"
-  sha256 ""
+  url "https://github.com/Himeyama/libcuda-gaussian1d/archive/refs/tags/0.1.0.tar.gz"
+  sha256 "6c843219f38ba2d229723cdc8ad01a67e9cd4f0c8eb3e91047f02280d2ff7f4e"
   license "MIT"
 
   def install
